@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd" 
+        default-init-method="init" default-lazy-init="true">
+
+    <bean id="greet" class="com.h2kinfosys.spring2.Greetings" 
+    		init-method="start" destroy-method="destroy">
+    	<constructor-arg index="1" value="Florida" />
+    	<constructor-arg index="0" value="English" />
+   </bean>
+   
+   <bean id="emp" class="com.h2kinfosys.spring2.Employee" destroy-method="destroy">
+   		<property name="empId" value="100"></property>
+   		<property name="empName" value="Neil Armstrong " ></property>
+   </bean>
+   
+   <bean id="manager" class="com.h2kinfosys.spring2.Manager"></bean>
+   
+   <bean id="msword" class="com.h2kinfosys.spring2.MSWord">
+   		<property name="version" value="360"></property>
+   		<property name="spellChecker">
+   			<bean class="com.h2kinfosys.spring2.SpellChecker">
+   				<property name="language" value="English"></property>
+   			</bean>
+   		</property>
+   </bean>
+
+   
+
+</beans>
+
